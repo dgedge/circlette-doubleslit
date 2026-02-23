@@ -81,11 +81,12 @@ def run_bach_simulation(measured=False):
 		psi[:, 2] *= mask;
 		psi[:, 3] *= mask
 
-		# PERFECT MEASUREMENT (Instant Orthogonal Projection)
+		# 5. Deterministic Unitary Decoherence (Measurement)
 		if measured:
-			psi[1, :, s1_slice, exit_x] += psi[0, :, s1_slice, exit_x]
-			psi[0, :, s1_slice, exit_x] = 0.0
-
+			# True unitary SWAP (CNOT) between universes at Slit 1
+			temp = psi[0, :, s1_slice, exit_x].copy()
+			psi[0, :, s1_slice, exit_x] = psi[1, :, s1_slice, exit_x]
+			psi[1, :, s1_slice, exit_x] = temp
 		screen_exposure += np.sum(np.abs(psi[:, :, :, detector_x]) ** 2, axis=(0, 1))
 
 	final_heatmap = np.sum(np.abs(psi) ** 2, axis=(0, 1))
@@ -171,7 +172,7 @@ if os.path.exists(data_file):
 
 		# =======================================================
 		# THE EXACT PHYSICAL SCALE FACTOR (1.0 mm = 275 pixels)
-		scale_factor = 323.5
+		scale_factor = 4554.0
 		# =======================================================
 
 		exp_pos_pixels = (exp_pos * scale_factor) + 2048
@@ -190,5 +191,5 @@ ax2.set_facecolor('#050510')
 
 plt.tight_layout()
 # Save the plot as a PNG
-plt.savefig("fig_doubleslit.png", format="png")
+plt.savefig("fig_doubleslit.pdf", format='pdf', bbox_inches='tight')
 plt.show()
