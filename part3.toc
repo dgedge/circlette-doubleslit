@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}The Circlette Lattice}{2}{section.2}%
+\contentsline {section}{\numberline {3}Wavepacket Propagation on the Lattice}{3}{section.3}%
+\contentsline {section}{\numberline {4}Single-Slit Diffraction}{3}{section.4}%
+\contentsline {section}{\numberline {5}Double-Slit Interference}{4}{section.5}%
+\contentsline {section}{\numberline {6}Decoherence and the Destruction of Interference}{5}{section.6}%
+\contentsline {section}{\numberline {7}Discussion}{5}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{6}{section.8}%
+\contentsline {section}{\numberline {A}Numerical Details}{6}{appendix.A}%
+\contentsline {section}{\numberline {B}Computational Implementation and Source Code}{6}{appendix.B}%
+\contentsline {section}{References}{7}{lstnumber.-1.36}%
